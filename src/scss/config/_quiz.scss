@@ -1,0 +1,237 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+.quiz__hero {
+  height: 320px;
+
+  @include m.mq(sp) {
+    height: 160px;
+  }
+
+  &__inner {
+    height: 100%;
+    background-image: url("../img/quiz/bg-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include m.mq(sp) {
+      background-position: center;
+    }
+  }
+
+  &__heading {
+    padding-top: 110px;
+    padding-left: 14%;
+    color: v.$white;
+
+    @include m.mq(sp) {
+      padding-top: 60px;
+      padding-left: 32px;
+    }
+  }
+
+  &__lead {
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 32px;
+
+    @include m.mq(sp) {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
+
+  &__title {
+    font-size: 60px;
+    line-height: 90px;
+
+    @include m.mq(sp) {
+      font-size: 28px;
+      line-height: 42px;
+    }
+  }
+}
+
+// quiz-----------------------------------------------
+
+.quiz {
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: 984px;
+
+  &__inner {
+    padding-top: 120px;
+
+    @include m.mq(sp) {
+      padding-top: 80px;
+    }
+  }
+
+  &__number {
+    margin-bottom: 24px;
+    letter-spacing: 6px;
+    background-color: v.$blue;
+
+    @include m.mq(sp) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text {
+    font-size: 36px;
+    line-height: 54px;
+
+    @include m.mq(sp) {
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+
+  &__caption {
+    margin: 64px auto 0 auto;
+    height: 360px;
+
+    @include m.mq(sp) {
+      margin-top: 24px;
+      height: auto;
+    }
+
+    & img {
+      object-fit: contain;
+    }
+  }
+}
+
+// answer--------------------------------------------
+
+.answer {
+  margin-top: 62px;
+
+  @include m.mq(sp) {
+    margin-top: 32px;
+  }
+
+  &__icon {
+    margin-bottom: 16px;
+    background-color: v.$red;
+  }
+
+  &__list {
+    display: flex;
+    margin-bottom: 16px;
+    width: 100%;
+    gap: 8px;
+    justify-content: space-between;
+
+    @include m.mq(sp) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding: 18px;
+    max-width: 312px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 32px;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 5px v.$light-gray;
+    border-radius: 8px;
+    background-color: v.$white;
+    cursor: pointer;
+
+    @include m.mq(sp) {
+      max-width: 100%;
+      padding: 16px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    &::after {
+      content: " ";
+      display: inline-block;
+      width: 12px;
+      height: 13px;
+      clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      background-color: v.$triangle-color;
+    }
+  }
+}
+
+// judgement---------------------------------------
+
+.judgement {
+  margin-bottom: 16px;
+  padding: 24px;
+  background-color: v.$light-blue;
+  border-radius: 8px;
+
+  @include m.mq(sp) {
+    padding: 24px 40px;
+  }
+
+  & h3 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  & p {
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: bold;
+  }
+
+  & span {
+    margin-right: 16px;
+    font-size: 24px;
+    line-height: 43px;
+  }
+
+  &__correct {
+    display: none;
+    background-color: v.$correct-color;
+
+    & h3 {
+      color: v.$red;
+    }
+  }
+
+  &__wrong {
+    display: none;
+    background-color: v.$wrong-color;
+
+    & h3 {
+      color: v.$blue;
+    }
+  }
+}
+
+// quote----------------------------------------
+
+.quote {
+  padding: 24px;
+  background-color: v.$light-blue;
+  border-radius: 8px;
+
+  &__icon {
+    display: inline-block;
+    margin-right: 16px;
+    width: 25px;
+  }
+
+  &__text {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: bold;
+
+    @include m.mq(sp) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}

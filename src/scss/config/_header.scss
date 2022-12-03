@@ -1,0 +1,49 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+.header {
+  position: fixed;
+  width: 100vw;
+  background-color: v.$white;
+  height: 80px;
+  z-index: 100;
+
+  @include m.mq(sp) {
+    height: 56px;
+  }
+
+  &__inner {
+    height: 100%;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include m.mq(sp) {
+      padding: 16px;
+      height: auto;
+    }
+  }
+
+  &__logo {
+    @include m.mq(sp) {
+      height: 24px;
+    }
+  }
+}
+
+.nav {
+
+  @include m.mq(sp) {
+    display: none;
+  }
+
+  &__list {
+    gap: 40px;
+  }
+
+  &__item {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}

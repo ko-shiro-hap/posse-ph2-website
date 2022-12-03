@@ -1,0 +1,184 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+.top__hero {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1280px;
+  align-items: center;
+  justify-content: space-between;
+
+  @include m.mq(sp) {
+    flex-direction: column-reverse;
+  }
+
+  &__heading {
+    padding: 43px 61px;
+    background-color: #eff2f5;
+    border-radius: 24px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 2;
+
+    @include m.mq(sp) {
+      margin-top: -24px;
+      padding: 24px 24px;
+      width: calc(100% - 80px);
+    }
+  }
+
+  &__lead {
+    margin-bottom: 18px;
+    color: v.$blue;
+
+    @include m.mq(sp) {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    font-size: 60px;
+    line-height: 80px;
+    letter-spacing: 3px;
+    text-align: start;
+
+    @include m.mq(sp) {
+      font-size: 28px;
+      line-height: 42px;
+      text-align: center;
+      letter-spacing: 1.5px;
+    }
+
+    & .break {
+      @include m.mq(sp) {
+        display: none;
+      }
+    }
+  }
+
+  &__thumbnail {
+    display: inline-block;
+    margin-right: calc(50% - 50vw);
+    margin-left: -125px;
+    max-width: 1280px;
+    min-width: 396px;
+    width: 100%;
+    z-index: 1;
+    border-radius: 80px 0 0 80px;
+    overflow: hidden;
+
+    @include m.mq(sp) {
+      margin: 0;
+      border-radius: 0;
+    }
+
+    & img {
+      max-height: 680px;
+    }
+  }
+
+  &__inducing {
+    position: absolute;
+    bottom: 30px;
+    left: 32px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #333;
+    z-index: 3;
+
+    @include m.mq(sp) {
+      display: none;
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: v.$gray;
+    }
+  }
+}
+
+// about-------------------------------------
+
+.about {
+  margin: 90px auto 0 auto;
+  max-width: 984px;
+  padding: 0 24px;
+
+  @include m.mq(sp) {
+    margin-top: 64px;
+    padding: 0 16px;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 36px;
+    line-height: 54px;
+
+    @include m.mq(sp) {
+      font-size: 24px;
+      line-height: 43px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 25px;
+    color: v.$blue;
+  }
+
+  &__content {
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+
+    @include m.mq(sp) {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__thumbnail {
+    margin: 0;
+    max-width: 472px;
+    max-height: 312px;
+    width: 50%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+
+    @include m.mq(sp) {
+      width: 100%;
+      max-width: none;
+      max-height: none;
+    }
+
+  }
+
+  &__text {
+    width: 50%;
+    margin: auto 0;
+    font-size: 14px;
+    line-height: 25px;
+
+    @include m.mq(sp) {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
