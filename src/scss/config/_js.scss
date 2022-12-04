@@ -1,0 +1,23 @@
+@use "../global/variables" as v;
+
+.js-selected {
+  border-color: v.$blue;
+  background-color: v.$correct-color;
+}
+
+.js-on{
+  display: block;
+}
+
+.js-hamburger__head {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.js-hamburger__foot {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.js-slide {
+transform: translateX(-100%);
+opacity: 1;
+}

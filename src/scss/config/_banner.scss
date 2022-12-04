@@ -1,0 +1,62 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+.banner {
+  display: flex;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 280px;
+  background-color: v.$banner-color;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+
+  @include m.mq(sp) {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  &__link {
+    display: flex;
+    padding: 22px 24px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px;
+    text-decoration: none;
+
+    @include m.mq(sp) {
+      padding: 10px;
+      gap: 8px;
+      justify-content: center;
+    }
+  }
+
+  & .line__icon {
+    height: 36px;
+    width: 36px;
+
+    @include m.mq(sp) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &__text {
+    color: v.$white;
+    font-size: 14px;
+    line-height: 18.2px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+
+    & .break {
+      @include m.mq(sp) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+.footer {
+  text-align: center;
+
+  @include m.mq(sp) {
+    padding-bottom: 48px;
+  }
+
+  &__head {
+    padding: 56px 0 48px 0;
+    border-top: 1px solid v.$light-gray;
+    border-bottom: 1px solid v.$light-gray;
+
+    @include m.mq(sp) {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 24px;
+
+    & img {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__official__link {
+
+    & img {
+      width: 12.5px;
+      height: 12.5px;
+      margin-left: 5px;
+    }
+  }
+
+  & .nav {
+    margin-top: 32px;
+
+    &__list {
+      gap: 8px;
+    }
+  }
+
+  &__foot {
+    padding: 30px 0;
+
+  }
+  &__copyright {
+    font-size: 10px;
+    color: v.$dark-gray;
+    letter-spacing: 1px;
+  }
+}
+
+
