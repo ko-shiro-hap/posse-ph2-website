@@ -74,6 +74,7 @@ shuffle($questions);
         <tr>
           <th>ID</th>
           <th>問題</th>
+          <th></th>
         </tr>
         <tr>
           <td>1</td>

@@ -1,12 +1,17 @@
 @use "../global/variables" as v;
 @use "../global/mixin" as m;
 
+
 .admin__header {
   display: flex;
-  padding: 20px 8px;
+  padding: 20px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid v.$dark-gray;
+
+  & a {
+    color: v.$blue;
+  }
 }
 
 .admin__main {
@@ -39,4 +44,35 @@
   padding-top: 40px;
   width: 80%;
   height: 100%;
+
+  & h2 {
+    padding: 20px 0;
+    padding-bottom: 40px;
+    font-size: 2rem;
+  }
+
+  &__table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    & tr{
+      border-bottom: solid 1px v.$light-gray;
+      cursor: pointer;
+    }
+
+    & tr:hover{
+      background-color: v.$light-gray;
+    }
+
+    & th, td{
+      text-align: left;
+      padding: 20px;
+    }
+
+    & a {
+      color: v.$blue;
+      text-decoration: underline;
+    }
+  }
 }

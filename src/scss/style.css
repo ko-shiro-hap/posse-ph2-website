@@ -929,10 +929,13 @@ img {
 
 .admin__header {
   display: flex;
-  padding: 20px 8px;
+  padding: 20px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #666666;
+}
+.admin__header a {
+  color: #0071bc;
 }
 
 .admin__main {
@@ -963,4 +966,29 @@ img {
   padding-top: 40px;
   width: 80%;
   height: 100%;
+}
+.admin__questions h2 {
+  padding: 20px 0;
+  padding-bottom: 40px;
+  font-size: 2rem;
+}
+.admin__questions__table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+.admin__questions__table tr {
+  border-bottom: solid 1px #eeeeee;
+  cursor: pointer;
+}
+.admin__questions__table tr:hover {
+  background-color: #eeeeee;
+}
+.admin__questions__table th, .admin__questions__table td {
+  text-align: left;
+  padding: 20px;
+}
+.admin__questions__table a {
+  color: #0071bc;
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */
