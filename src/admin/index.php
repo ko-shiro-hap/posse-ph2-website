@@ -41,7 +41,50 @@ shuffle($questions);
 </head>
 
 <body>
+  <!-- start header -->
+  <header class="admin__header">
+    <h1>クイズ管理画面</h1>
+    <a href="">ログアウト</a>
+  </header>
+  <!-- end header -->
 
+  <!-- start main -->
+  <main class="admin__main">
+
+    <!-- start sidebar -->
+    <div class="admin__sidebar">
+      <ul class="admin__sidebar__items">
+        <a href="">
+          <li class="admin__sidebar__item">ユーザー招待</li>
+        </a>
+        <a href="">
+          <li class="admin__sidebar__item">問題一覧</li>
+        </a>
+        <a href="">
+          <li class="admin__sidebar__item">問題作成</li>
+        </a>
+      </ul>
+    </div>
+    <!-- end sidebar -->
+
+    <!-- start questions -->
+    <div class="admin__questions">
+      <h2>問題一覧</h2>
+      <table class="admin__questions__table">
+        <tr>
+          <th>ID</th>
+          <th>問題</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><a href="">問題タイトル</a></td>
+          <td><a href="">削除</a></td>
+        </tr>
+      </table>
+    </div>
+
+
+  </main>
 </body>
 
 </html>
