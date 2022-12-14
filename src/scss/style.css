@@ -933,4 +933,34 @@ img {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #666666;
+}
+
+.admin__main {
+  display: flex;
+  height: calc(100vh - 117px);
+}
+
+.admin__sidebar {
+  width: 20%;
+  height: 100%;
+  padding: 20px 0;
+  padding-top: 40px;
+  background-color: #eeeeee;
+}
+.admin__sidebar__item {
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.admin__sidebar__item:hover {
+  background-color: #adadad;
+  color: #fff;
+}
+
+.admin__questions {
+  padding: 20px;
+  padding-top: 40px;
+  width: 80%;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */
