@@ -35,7 +35,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-nav ul {
+nav, ul {
   list-style: none;
 }
 
@@ -925,4 +925,12 @@ img {
 .js-slide {
   transform: translateX(-100%);
   opacity: 1;
+}
+
+.admin__header {
+  display: flex;
+  padding: 20px 8px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #666666;
 }/*# sourceMappingURL=style.css.map */
