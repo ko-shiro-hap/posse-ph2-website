@@ -16,10 +16,6 @@ foreach ($choices as $key => $choice) {
   // $questionsの$index番目にchoicesという連想配列を作り、$choiceを格納
   $questions[$index]["choices"][] = $choice;
 }
-
-// 問題をシャッフルする
-$count = range(1, count($questions));
-shuffle($questions);
 ?>
 
 <!DOCTYPE html>
@@ -76,11 +72,22 @@ shuffle($questions);
           <th>問題</th>
           <th></th>
         </tr>
+
+        <!-- 問題ごとに繰り返す -->
+        <?php
+      foreach ($questions as $index => $question) :
+
+        // 問題の配列の中身をそれぞれ変数に格納する
+        $question_id = $question['id'];
+        $question_content = $question['content'];
+      ?>
         <tr>
-          <td>1</td>
-          <td><a href="">問題タイトル</a></td>
+          <td><?= $question_id ?></td>
+          <td><a href=""><?= $question_content ?></a></td>
           <td><a href="">削除</a></td>
         </tr>
+        <?php endforeach; ?>
+
       </table>
     </div>
 
