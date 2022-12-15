@@ -1,0 +1,78 @@
+@use "../global/variables" as v;
+@use "../global/mixin" as m;
+
+
+.admin__header {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid v.$dark-gray;
+
+  & a {
+    color: v.$blue;
+  }
+}
+
+.admin__main {
+  display: flex;
+  height: calc(100vh - 117px);
+}
+
+.admin__sidebar {
+  width: 20%;
+  height: 100%;
+  padding: 20px 0;
+  padding-top: 40px;
+  background-color: v.$light-gray;
+
+  &__item {
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: v.$gray;
+      color: v.$white;
+    }
+  }
+}
+
+.admin__questions {
+  padding: 20px;
+  padding-top: 40px;
+  width: 80%;
+  height: 100%;
+
+  & h2 {
+    padding: 20px 0;
+    padding-bottom: 40px;
+    font-size: 2rem;
+  }
+
+  &__table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    & tr{
+      border-bottom: solid 1px v.$light-gray;
+      cursor: pointer;
+    }
+
+    & tr:hover{
+      background-color: v.$light-gray;
+    }
+
+    & th, td{
+      text-align: left;
+      padding: 20px;
+    }
+
+    & a {
+      color: v.$blue;
+      text-decoration: underline;
+    }
+  }
+}

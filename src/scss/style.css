@@ -35,7 +35,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-nav ul {
+nav, ul {
   list-style: none;
 }
 
@@ -925,4 +925,70 @@ img {
 .js-slide {
   transform: translateX(-100%);
   opacity: 1;
+}
+
+.admin__header {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #666666;
+}
+.admin__header a {
+  color: #0071bc;
+}
+
+.admin__main {
+  display: flex;
+  height: calc(100vh - 117px);
+}
+
+.admin__sidebar {
+  width: 20%;
+  height: 100%;
+  padding: 20px 0;
+  padding-top: 40px;
+  background-color: #eeeeee;
+}
+.admin__sidebar__item {
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.admin__sidebar__item:hover {
+  background-color: #adadad;
+  color: #fff;
+}
+
+.admin__questions {
+  padding: 20px;
+  padding-top: 40px;
+  width: 80%;
+  height: 100%;
+}
+.admin__questions h2 {
+  padding: 20px 0;
+  padding-bottom: 40px;
+  font-size: 2rem;
+}
+.admin__questions__table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+.admin__questions__table tr {
+  border-bottom: solid 1px #eeeeee;
+  cursor: pointer;
+}
+.admin__questions__table tr:hover {
+  background-color: #eeeeee;
+}
+.admin__questions__table th, .admin__questions__table td {
+  text-align: left;
+  padding: 20px;
+}
+.admin__questions__table a {
+  color: #0071bc;
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */
