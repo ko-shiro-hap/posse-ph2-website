@@ -56,7 +56,7 @@ CREATE TABLE
         question_id INT,
         name VARCHAR(255),
         valid boolean,
-        FOREIGN KEY (question_id) REFERENCES questions(id)
+        FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
     ) CHARSET = utf8;
 
 INSERT INTO

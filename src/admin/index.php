@@ -84,7 +84,12 @@ foreach ($choices as $key => $choice) {
         <tr>
           <td><?= $question_id ?></td>
           <td><a href=""><?= $question_content ?></a></td>
-          <td><a href="">削除</a></td>
+          <form method="POST" action="../services/delete_question.php">
+            <td>
+              <input type="hidden" name="id" value="<?= $question['id'] ?>">
+              <button type="submit">削除</button>
+            </td>
+          </form>
         </tr>
         <?php endforeach; ?>
 
