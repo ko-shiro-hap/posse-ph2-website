@@ -53,7 +53,7 @@ foreach ($choices as $key => $choice) {
         <a href="">
           <li class="admin__sidebar__item">ユーザー招待</li>
         </a>
-        <a href="">
+        <a href="../index.php">
           <li class="admin__sidebar__item">問題一覧</li>
         </a>
         <a href="./questions/create.php">
@@ -66,7 +66,7 @@ foreach ($choices as $key => $choice) {
     <!-- start questions -->
     <div class="admin__questions">
       <h2>問題作成</h2>
-      <form method="POST" action="../../services/create_question.php"></form>
+      <form method="POST" action="../../services/create_question.php">
         <p class="admin__create__text">問題文:</p>
         <input type="text" class="admin__input" placeholder="問題文を入力してください" >
 
@@ -76,9 +76,17 @@ foreach ($choices as $key => $choice) {
         <input type="text" class="admin__input" placeholder="選択肢3を入力してください" >
 
         <p class="admin__create__text">正解の選択肢:</p>
-        <input type="radio" class="admin__radio" name="choice1" id="">選択肢1
-        <input type="radio" class="admin__radio" name="choice2" id="">選択肢2
-        <input type="radio" class="admin__radio" name="choice3" id="">選択肢3
+        <div class="admin__choices">
+          <label for="choice1" class="admin__label">
+            <input type="radio" class="admin__radio" name="choice1" id="">選択肢1
+          </label>
+        <label for="choice2" class="admin__label">
+          <input type="radio" class="admin__radio" name="choice2" id="">選択肢2
+        </label>
+        <label for="choice3" class="admin__label">
+          <input type="radio" class="admin__radio" name="choice3" id="">選択肢3
+        </label>
+      </div>
 
         <p class="admin__create__text">問題の画像:</p>
         <input type="file" class="admin__file">
@@ -87,6 +95,7 @@ foreach ($choices as $key => $choice) {
         <input type="text" class="admin__input" placeholder="補足を入力してください">
 
         <button class="admin__create__button">作成</button>
+      </form>
     </div>
 
 
