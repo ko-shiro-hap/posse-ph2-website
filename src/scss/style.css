@@ -997,7 +997,9 @@ img {
   padding: 12px 0;
   font-size: 1.1rem;
 }
-.admin__create__button {
+.admin__create__submit {
+  display: block;
+  box-sizing: border-box;
   padding: 8px 0;
   margin-top: 20px;
   width: 100%;

@@ -84,7 +84,9 @@
     font-size: 1.1rem;
   }
 
-  &__button {
+  &__submit {
+    display: block;
+    box-sizing: border-box;
     padding: 8px 0;
     margin-top: 20px;
     width: 100%;

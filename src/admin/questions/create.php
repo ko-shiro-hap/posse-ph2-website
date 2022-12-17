@@ -1,23 +1,3 @@
-<?php
-declare(strict_types = 1);
-
-// PDOの設定を呼び出す
-require('../../dbconnect.php');
-
-// 全問題の取り出し
-$questions = $dbh->query("SELECT * FROM questions")->fetchAll(PDO::FETCH_ASSOC);
-// 全選択肢の取り出し
-$choices = $dbh->query("SELECT * FROM choices")->fetchAll(PDO::FETCH_ASSOC);
-
-// 問題に対応する選択肢を、問題の配列の中にさらに配列で入れ込む
-foreach ($choices as $key => $choice) {
-  // $indexに$choice["question_id"]が$questionsのidと同じ場合、そのidを返している（foreachだから1~6まで）
-  $index = array_search($choice["question_id"], array_column($questions, 'id'));
-  // $questionsの$index番目にchoicesという連想配列を作り、$choiceを格納
-  $questions[$index]["choices"][] = $choice;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -68,33 +48,29 @@ foreach ($choices as $key => $choice) {
       <h2>問題作成</h2>
       <form method="POST" action="../../services/create_question.php">
         <p class="admin__create__text">問題文:</p>
-        <input type="text" class="admin__input" placeholder="問題文を入力してください" >
+        <input type="text" class="admin__input" name="content" placeholder="問題文を入力してください" >
 
         <p class="admin__create__text">選択肢:</p>
-        <input type="text" class="admin__input" placeholder="選択肢1を入力してください" >
-        <input type="text" class="admin__input" placeholder="選択肢2を入力してください" >
-        <input type="text" class="admin__input" placeholder="選択肢3を入力してください" >
+        <input type="text" class="admin__input" name="choice1" placeholder="選択肢1を入力してください" >
+        <input type="text" class="admin__input" name="choice2" placeholder="選択肢2を入力してください" >
+        <input type="text" class="admin__input" name="choice3" placeholder="選択肢3を入力してください" >
 
         <p class="admin__create__text">正解の選択肢:</p>
         <div class="admin__choices">
-          <label for="choice1" class="admin__label">
-            <input type="radio" class="admin__radio" name="choice1" id="">選択肢1
-          </label>
-        <label for="choice2" class="admin__label">
-          <input type="radio" class="admin__radio" name="choice2" id="">選択肢2
-        </label>
-        <label for="choice3" class="admin__label">
-          <input type="radio" class="admin__radio" name="choice3" id="">選択肢3
-        </label>
+        <select name="valid">
+          <option value="1">選択肢1</option>
+          <option value="2">選択肢2</option>
+          <option value="3">選択肢3</option>
+        </select>
       </div>
 
         <p class="admin__create__text">問題の画像:</p>
-        <input type="file" class="admin__file">
+        <input type="file" class="admin__file" name="image">
 
         <p class="admin__create__text">補足:</p>
-        <input type="text" class="admin__input" placeholder="補足を入力してください">
+        <input type="text" class="admin__input" name="supplement" placeholder="補足を入力してください">
 
-        <button class="admin__create__button">作成</button>
+        <input type="submit" class="admin__create__submit" value="作成">
       </form>
     </div>
 
