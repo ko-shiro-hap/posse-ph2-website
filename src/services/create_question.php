@@ -14,5 +14,34 @@ $valid = $_POST['valid'];
 
 echo $content;
 echo $image;
+echo $supplement;
+echo  $choice1;
+echo  $choice2;
+echo  $choice3;
 echo $valid;
+
+
+
+  try {
+    $questions_sql = "INSERT INTO questions (content, image, supplement) VALUES (:content, :image, :supplement)";
+    $questions_stmt = $dbh->prepare($questions_sql);
+    $questions_stmt->bindParam(":content", $content);
+    $questions_stmt->bindParam(":image", $image);
+    $questions_stmt->bindParam(":supplement", $supplement);
+    $questions_stmt->execute();
+
+    // $questions_sql = "INSERT INTO choices (content, image, supplement) VALUES (:content, :image, :supplement)";
+    // $questions_stmt = $dbh->prepare($questions_sql);
+    // $questions_stmt->bindParam(":content", $content);
+    // $questions_stmt->bindParam(":image", $image);
+    // $questions_stmt->bindParam(":supplement", $supplement);
+    // $questions_stmt->execute();
+
+    header('Location: ../admin/index.php');
+    exit();
+
+  } catch (PDOException $e) {
+    echo $e->getMessage();
+    die();
+  }
 ?>
