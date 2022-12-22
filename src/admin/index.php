@@ -56,7 +56,7 @@ foreach ($choices as $key => $choice) {
         <a href="">
           <li class="admin__sidebar__item">問題一覧</li>
         </a>
-        <a href="">
+        <a href="./questions/create.php">
           <li class="admin__sidebar__item">問題作成</li>
         </a>
       </ul>
