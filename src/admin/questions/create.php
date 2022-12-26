@@ -46,7 +46,7 @@
     <!-- start questions -->
     <div class="admin__questions">
       <h2>問題作成</h2>
-      <form method="POST" action="../../services/create_question.php">
+      <form method="POST" action="/../../services/create_question.php" enctype="multipart/form-data">
         <p class="admin__create__text">問題文:</p>
         <input type="text" class="admin__input" name="content" placeholder="問題文を入力してください" >
 
