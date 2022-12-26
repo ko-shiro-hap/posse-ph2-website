@@ -117,7 +117,7 @@ shuffle($questions);
       <!-- 問題ごとに繰り返す -->
       <?php
       foreach ($questions as $index => $question) :
-      
+
         // 問題の配列の中身をそれぞれ変数に格納する
         $question_id = $question['id'];
         $question_content = $question['content'];
@@ -143,7 +143,8 @@ shuffle($questions);
             $choice_valid = $choice['valid'];
             ?>
             <button class="answer__item quiz<?= $question_id ?>__btn" id="<?= $choice_id ?>"
-              onclick="clickFunction(<?= $choice_id ?>, <?= $question_id; ?>, <?= $choice_valid; ?>)"><?= $choice_text; ?></button>
+              onclick="clickFunction(<?= $choice_id ?>, <?= $question_id; ?>, <?= $choice_valid; ?>)"><?= $choice_text; ?>
+            </button>
             <?php endforeach; ?>
           </div>
         </div>
