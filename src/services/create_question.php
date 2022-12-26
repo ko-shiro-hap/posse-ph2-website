@@ -32,13 +32,14 @@ $valid = $_POST['valid'];
     $questions_stmt->execute();
 
     // choicesテーブルにデータを入れる
+    // choices=テーブル末尾のquestion_idを取得する
     $last_question_id = $dbh->query("SELECT id FROM questions ORDER BY id DESC")->fetch();
-    $insert_question_id = $last_question_id['id'] + 1;
+    $insert_question_id = $last_question_id['id'];
 
-    for ($i=1; $i <= 3 ; $i++) {
+    for ($i = 1; $i <= 3 ; $i++) {
       $choice = 'choice' . $i;
 
-      $choices_sql = "INSERT INTO choices (question_id, name, valid) VALUES ((select id from questions where id = :question_id), :name, :valid)";
+      $choices_sql = "INSERT INTO choices (question_id, name, valid) VALUES (:question_id, :name, :valid)";
       $choices_stmt = $dbh->prepare($choices_sql);
       $choices_stmt->bindParam(":question_id", $insert_question_id);
       $choices_stmt->bindParam(":name", $choice);
