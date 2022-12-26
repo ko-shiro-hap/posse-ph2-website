@@ -55,8 +55,9 @@ CREATE TABLE
         id INT AUTO_INCREMENT PRIMARY KEY,
         question_id INT,
         name VARCHAR(255),
-        valid boolean,
-        FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
+        valid boolean
+        /* 問題作成処理が難しくなるため一旦コメントアウト
+        /* FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE */
     ) CHARSET = utf8;
 
 INSERT INTO

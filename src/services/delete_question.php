@@ -8,10 +8,15 @@ if(isset($_POST['id'])) {
   $id = $_POST['id'];
 
   try {
-    $sql = "DELETE FROM questions WHERE id = :id";
-    $stmt = $dbh->prepare($sql);
-    $stmt->bindParam(":id", $id);
-    $stmt->execute();
+    $questions_sql = "DELETE FROM questions WHERE id = :id";
+    $questions_stmt = $dbh->prepare($questions_sql);
+    $questions_stmt->bindParam(":id", $id);
+    $questions_stmt->execute();
+
+    $choices_sql = "DELETE FROM choices WHERE question_id = :id";
+    $choices_stmt = $dbh->prepare($choices_sql);
+    $choices_stmt->bindParam(":id", $id);
+    $choices_stmt->execute();
 
     header('Location: ../admin/index.php');
     exit();
