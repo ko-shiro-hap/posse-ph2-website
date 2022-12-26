@@ -12,16 +12,6 @@ $choice2 = $_POST['choice2'];
 $choice3 = $_POST['choice3'];
 $valid = $_POST['valid'];
 
-// echo $content;
-// echo $image;
-// echo $supplement;
-// echo  $choice1;
-// echo  $choice2;
-// echo  $choice3;
-// echo $valid;
-
-
-
   try {
     // questionsテーブルにデータを入れる
     $questions_sql = "INSERT INTO questions (content, image, supplement) VALUES (:content, :image, :supplement)";
@@ -35,6 +25,8 @@ $valid = $_POST['valid'];
     // choices=テーブル末尾のquestion_idを取得する
     $last_question_id = $dbh->query("SELECT id FROM questions ORDER BY id DESC")->fetch();
     $insert_question_id = $last_question_id['id'];
+    $valid_true = 1;
+    $valid_false = 0;
 
     for ($i = 1; $i <= 3 ; $i++) {
       $choice = 'choice' . $i;
@@ -43,7 +35,12 @@ $valid = $_POST['valid'];
       $choices_stmt = $dbh->prepare($choices_sql);
       $choices_stmt->bindParam(":question_id", $insert_question_id);
       $choices_stmt->bindParam(":name", $choice);
-      $choices_stmt->bindParam(":valid", $valid);
+      // 問題作成時に正解として選択された選択肢のみvalidに1を入れる
+      if ($i == $valid) {
+        $choices_stmt->bindParam(":valid", $valid_true);
+      } else {
+        $choices_stmt->bindParam(":valid", $valid_false);
+      }
       $choices_stmt->execute();
     }
 
