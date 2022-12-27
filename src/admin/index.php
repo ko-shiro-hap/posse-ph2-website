@@ -83,7 +83,11 @@ foreach ($choices as $key => $choice) {
       ?>
         <tr>
           <td><?= $question_id ?></td>
-          <td><a href=""><?= $question_content ?></a></td>
+          <td>
+            <a href="./questions/edit.php?id=<?= $question["id"] ?>">
+                <?= $question_content ?>
+            </a>
+          </td>
           <form method="POST" action="../services/delete_question.php">
             <td>
               <input type="hidden" name="id" value="<?= $question['id'] ?>">

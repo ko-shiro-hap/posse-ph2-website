@@ -6,9 +6,6 @@ require('../dbconnect.php');
 
 $content = $_POST['content'];
 $supplement = isset($_POST['supplement']) ? $_POST['supplement'] : null;
-$choice1 = $_POST['choice1'];
-$choice2 = $_POST['choice2'];
-$choice3 = $_POST['choice3'];
 $valid = $_POST['valid'];
 
 // // 画像のアップロード
@@ -41,7 +38,7 @@ if (!empty($_FILES['image']['size'])) {
     $valid_false = 0;
 
     for ($i = 1; $i <= 3 ; $i++) {
-      $choice = 'choice' . $i;
+      $choice = $_POST["choice$i"];
 
       $choices_sql = "INSERT INTO choices (question_id, name, valid) VALUES (:question_id, :name, :valid)";
       $choices_stmt = $dbh->prepare($choices_sql);

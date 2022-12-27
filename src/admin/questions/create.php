@@ -36,7 +36,7 @@
         <a href="../index.php">
           <li class="admin__sidebar__item">問題一覧</li>
         </a>
-        <a href="./questions/create.php">
+        <a href="#">
           <li class="admin__sidebar__item">問題作成</li>
         </a>
       </ul>
