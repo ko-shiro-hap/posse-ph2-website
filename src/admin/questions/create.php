@@ -58,6 +58,7 @@
         <p class="admin__create__text">正解の選択肢:</p>
         <div class="admin__choices">
         <select name="valid">
+          <option value="" selected disabled></option>
           <option value="1">選択肢1</option>
           <option value="2">選択肢2</option>
           <option value="3">選択肢3</option>
