@@ -1040,6 +1040,25 @@ img {
   padding-bottom: 40px;
   font-size: 2rem;
 }
-.admin__invitation__email {
+.admin__invitation__input {
+  width: 320px;
+}
+
+.admin__signup {
+  padding: 20px;
+  padding-top: 40px;
+  width: 80%;
+  height: 100%;
+}
+.admin__signup h2 {
+  padding: 20px 0;
+  padding-bottom: 40px;
+  font-size: 2rem;
+}
+.admin__signup input {
+  display: block;
+}
+.admin__signup__input {
+  margin-bottom: 20px;
   width: 320px;
 }/*# sourceMappingURL=style.css.map */
