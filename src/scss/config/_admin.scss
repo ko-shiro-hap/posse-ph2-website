@@ -133,10 +133,32 @@
     width: 320px;
   }
 }
+
 .admin__signup {
   padding: 20px;
   padding-top: 40px;
   width: 80%;
+  height: 100%;
+
+  & h2 {
+    padding: 20px 0;
+    padding-bottom: 40px;
+    font-size: 2rem;
+  }
+
+  & input {
+    display: block;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    width: 320px;
+  }
+}
+
+.admin__signin {
+  padding: 20px;
+  padding-top: 40px;
   height: 100%;
 
   & h2 {
