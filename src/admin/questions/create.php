@@ -1,3 +1,15 @@
+<?php
+
+  session_start();
+
+  if (empty($_SESSION['user_name'])) {
+    $_SESSION['err_msg'] = array('サインインしてください');
+      header('Location: ./auth/signin.php');
+      exit;
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -20,7 +32,7 @@
   <!-- start header -->
   <header class="admin__header">
     <h1>クイズ管理画面</h1>
-    <a href="">ログアウト</a>
+    <a href="../../services/signout.php">ログアウト</a>
   </header>
   <!-- end header -->
 
@@ -30,7 +42,7 @@
     <!-- start sidebar -->
     <div class="admin__sidebar">
       <ul class="admin__sidebar__items">
-        <a href="">
+        <a href="../users/invitation.php">
           <li class="admin__sidebar__item">ユーザー招待</li>
         </a>
         <a href="../index.php">

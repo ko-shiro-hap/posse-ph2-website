@@ -172,6 +172,11 @@ img {
   }
 }
 
+.error-message {
+  margin-bottom: 8px;
+  color: red;
+}
+
 .header {
   position: fixed;
   width: 100vw;
@@ -1027,4 +1032,56 @@ img {
   display: flex;
   align-items: center;
   color: #666666;
+}
+
+.admin__invitation {
+  padding: 20px;
+  padding-top: 40px;
+  width: 80%;
+  height: 100%;
+}
+.admin__invitation h2 {
+  padding: 20px 0;
+  padding-bottom: 40px;
+  font-size: 2rem;
+}
+.admin__invitation__input {
+  width: 320px;
+}
+
+.admin__signup {
+  padding: 20px;
+  padding-top: 40px;
+  width: 80%;
+  height: 100%;
+}
+.admin__signup h2 {
+  padding: 20px 0;
+  padding-bottom: 40px;
+  font-size: 2rem;
+}
+.admin__signup input {
+  display: block;
+}
+.admin__signup__input {
+  margin-bottom: 20px;
+  width: 320px;
+}
+
+.admin__signin {
+  padding: 20px;
+  padding-top: 40px;
+  height: 100%;
+}
+.admin__signin h2 {
+  padding: 20px 0;
+  padding-bottom: 40px;
+  font-size: 2rem;
+}
+.admin__signin input {
+  display: block;
+}
+.admin__signin__input {
+  margin-bottom: 20px;
+  width: 320px;
 }/*# sourceMappingURL=style.css.map */
