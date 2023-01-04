@@ -20,7 +20,7 @@
   <!-- start header -->
   <header class="admin__header">
     <h1>クイズ管理画面</h1>
-    <a href="">ログアウト</a>
+    <a href="../../quiz/index.php">クイズに戻る</a>
   </header>
   <!-- end header -->
 

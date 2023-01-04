@@ -1,6 +1,14 @@
 <?php
 declare(strict_types = 1);
 
+session_start();
+
+if (empty($_SESSION['user_name'])) {
+  $_SESSION['err_msg'] = array('サインインしてください');
+    header('Location: ./auth/signin.php');
+    exit;
+}
+
 // PDOの設定を呼び出す
 require('../dbconnect.php');
 
@@ -40,7 +48,7 @@ foreach ($choices as $key => $choice) {
   <!-- start header -->
   <header class="admin__header">
     <h1>クイズ管理画面</h1>
-    <a href="">ログアウト</a>
+    <a href="../services/signout.php">ログアウト</a>
   </header>
   <!-- end header -->
 
