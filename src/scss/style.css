@@ -1027,4 +1027,19 @@ img {
   display: flex;
   align-items: center;
   color: #666666;
+}
+
+.admin__invitation {
+  padding: 20px;
+  padding-top: 40px;
+  width: 80%;
+  height: 100%;
+}
+.admin__invitation h2 {
+  padding: 20px 0;
+  padding-bottom: 40px;
+  font-size: 2rem;
+}
+.admin__invitation input {
+  width: 320px;
 }/*# sourceMappingURL=style.css.map */

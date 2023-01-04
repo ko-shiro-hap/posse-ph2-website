@@ -62,7 +62,7 @@
     <!-- start sidebar -->
     <div class="admin__sidebar">
       <ul class="admin__sidebar__items">
-        <a href="">
+        <a href="../users/invitation.php">
           <li class="admin__sidebar__item">ユーザー招待</li>
         </a>
         <a href="../index.php">
