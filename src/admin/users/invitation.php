@@ -44,9 +44,9 @@
     <!-- end sidebar -->
     <div class="admin__invitation">
       <h2>ユーザー招待</h2>
-      <form action="../../services/create_user.php">
-        <input type="text" placeholder="メールアドレスを入力してください">
-        <button type="submit">送信</button>
+      <form method="POST" action="../../services/create_user.php" enctype="multipart/form-data">
+        <input type="text" name="email" class="admin__invitation__email" placeholder="メールアドレスを入力してください">
+        <input type="submit" value="送信">
       </form>
     </div>
 
